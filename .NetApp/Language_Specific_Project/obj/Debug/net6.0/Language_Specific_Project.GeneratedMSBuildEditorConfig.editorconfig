@@ -9,45 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Language_Specific_Project
 build_property.RootNamespace = Language_Specific_Project
-build_property.ProjectDir = C:\Users\Ishan Kalpadith\source\repos\Language_project\.NetApp\Language_Specific_Project\
+build_property.ProjectDir = E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Language_Specific_Project\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Ishan Kalpadith\source\repos\Language_project\.NetApp\Language_Specific_Project
+build_property.MSBuildProjectDirectory = E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Language_Specific_Project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Ishan Kalpadith/source/repos/Language_project/.NetApp/Language_Specific_Project/Views/Home/Index.cshtml]
+[E:/FIdenz Training Materials/Language Specific Project/Assignment/Language_Specific_Project/.NetApp/Language_Specific_Project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ishan Kalpadith/source/repos/Language_project/.NetApp/Language_Specific_Project/Views/Home/Login.cshtml]
+[E:/FIdenz Training Materials/Language Specific Project/Assignment/Language_Specific_Project/.NetApp/Language_Specific_Project/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ishan Kalpadith/source/repos/Language_project/.NetApp/Language_Specific_Project/Views/Home/Privacy.cshtml]
+[E:/FIdenz Training Materials/Language Specific Project/Assignment/Language_Specific_Project/.NetApp/Language_Specific_Project/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ishan Kalpadith/source/repos/Language_project/.NetApp/Language_Specific_Project/Views/Shared/Error.cshtml]
+[E:/FIdenz Training Materials/Language Specific Project/Assignment/Language_Specific_Project/.NetApp/Language_Specific_Project/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ishan Kalpadith/source/repos/Language_project/.NetApp/Language_Specific_Project/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/FIdenz Training Materials/Language Specific Project/Assignment/Language_Specific_Project/.NetApp/Language_Specific_Project/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ishan Kalpadith/source/repos/Language_project/.NetApp/Language_Specific_Project/Views/User/Profile.cshtml]
+[E:/FIdenz Training Materials/Language Specific Project/Assignment/Language_Specific_Project/.NetApp/Language_Specific_Project/Views/User/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ishan Kalpadith/source/repos/Language_project/.NetApp/Language_Specific_Project/Views/_ViewImports.cshtml]
+[E:/FIdenz Training Materials/Language Specific Project/Assignment/Language_Specific_Project/.NetApp/Language_Specific_Project/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ishan Kalpadith/source/repos/Language_project/.NetApp/Language_Specific_Project/Views/_ViewStart.cshtml]
+[E:/FIdenz Training Materials/Language Specific Project/Assignment/Language_Specific_Project/.NetApp/Language_Specific_Project/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ishan Kalpadith/source/repos/Language_project/.NetApp/Language_Specific_Project/Views/Shared/_Layout.cshtml]
+[E:/FIdenz Training Materials/Language Specific Project/Assignment/Language_Specific_Project/.NetApp/Language_Specific_Project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s5snb0toia

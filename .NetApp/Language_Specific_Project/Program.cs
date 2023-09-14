@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Language_Specific_Project.Services;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +51,8 @@ builder.Services
             )
         };
     });
+
+builder.Services.AddSingleton<IAuthorizationHandler, UserOrAdminHandler>();
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy(
@@ -59,6 +62,13 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy(
         "UserPolicy",
         policy => policy.RequireRole(configuration["Authentication:UserRole"])
+    );
+    options.AddPolicy(
+        "UserOrAdminPolicy",
+        policy =>
+        {
+            policy.Requirements.Add(new UserOrAdminRequirement());
+        }
     );
 });
 

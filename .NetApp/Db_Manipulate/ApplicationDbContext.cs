@@ -20,7 +20,7 @@ namespace Db_Manipulate
                 );
             }
         }
-
+        //manage relatioships between address table and user table
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder

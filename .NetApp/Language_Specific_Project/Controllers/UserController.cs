@@ -47,7 +47,7 @@ namespace Language_Specific_Project.Controllers
 
 
         // PUT api/User/EditUser/{_id}
-        [Authorize(Policy = "UserPolicy")]
+        [Authorize(Policy = "UserOrAdminPolicy")]
         [HttpPut("EditUser/{_id}")]
         public async Task<IActionResult> EditUser(string _id, [FromBody] UserUpdateDTO userUpdate)
         {
@@ -64,7 +64,7 @@ namespace Language_Specific_Project.Controllers
 
 
         //GET api/User/GetDistance/_id?latitude=value&longitude=value
-        [Authorize(Policy = "UserPolicy")]
+        [Authorize(Policy = "UserOrAdminPolicy")]
         [HttpGet("GetDistance/{_id}")]
         public IActionResult GetDistance(string _id, double latitude, double longitude)
         {
@@ -105,7 +105,7 @@ namespace Language_Specific_Project.Controllers
 
 
         //GET api/User/SearchUser?searchText=text to search
-        [Authorize(Policy = "UserPolicy")]
+        [Authorize(Policy = "UserOrAdminPolicy")]
         [HttpGet("SearchUser")]
         public IActionResult SearchUser(string searchText)
         {
@@ -122,7 +122,7 @@ namespace Language_Specific_Project.Controllers
 
 
         //GET api/User/GetCustomerListByZipCode
-        [Authorize(Policy = "UserPolicy")]
+        [Authorize(Policy = "UserOrAdminPolicy")]
         [HttpGet("GetCustomerListByZipCode")]
         public IActionResult GetCustomerListByZipCode()
         {

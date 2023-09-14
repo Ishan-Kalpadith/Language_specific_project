@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EhDIPPqUutcFYcbaxQ6bMy0jIBl97u6qTH6jtrHgjNEQf/WFh9h9P+mXzmjDyEmX235S6vwXfrd4VfQM0D8cpA==",
+  "dgSpecHash": "BO5VY5Bl/ju9n7J0YpPKqziyTfRbK7MEtbecFCdQ7nkv6nz72hIcjQKxFzOx94Q5//NrsPwLQga+nM4vX5TD8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj",
+  "projectFilePath": "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ishan Kalpadith\\.nuget\\packages\\auth0.aspnetcore.authentication\\1.3.1\\auth0.aspnetcore.authentication.1.3.1.nupkg.sha512",
     "C:\\Users\\Ishan Kalpadith\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

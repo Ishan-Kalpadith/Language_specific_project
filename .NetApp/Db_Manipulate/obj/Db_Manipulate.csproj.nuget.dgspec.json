@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj": {}
+    "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj": {
+    "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj",
+        "projectUniqueName": "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj",
         "projectName": "Db_Manipulate",
-        "projectPath": "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj",
+        "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj",
         "packagesPath": "C:\\Users\\Ishan Kalpadith\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Db_Manipulate\\obj\\",
+        "outputPath": "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Db_Manipulate\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ishan Kalpadith\\AppData\\Roaming\\NuGet\\NuGet.Config",

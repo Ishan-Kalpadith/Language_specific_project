@@ -2756,11 +2756,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Language_Specific_Project\\Language_Specific_Project.csproj",
+      "projectUniqueName": "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Language_Specific_Project\\Language_Specific_Project.csproj",
       "projectName": "Language_Specific_Project",
-      "projectPath": "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Language_Specific_Project\\Language_Specific_Project.csproj",
+      "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Language_Specific_Project\\Language_Specific_Project.csproj",
       "packagesPath": "C:\\Users\\Ishan Kalpadith\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Language_Specific_Project\\obj\\",
+      "outputPath": "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Language_Specific_Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ishan Kalpadith\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2777,8 +2777,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj": {
-              "projectPath": "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj"
+            "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj": {
+              "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\Assignment\\Language_Specific_Project\\.NetApp\\Db_Manipulate\\Db_Manipulate.csproj"
             }
           }
         }
