@@ -11,11 +11,11 @@ namespace DatabaseConfigClassLibrary.Migrations
                 columns: table => new
                 {
                     AddressId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    number = table.Column<int>(type: "int", nullable: false),
-                    street = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    city = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    state = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    zipcode = table.Column<int>(type: "int", nullable: false)
+                    Number = table.Column<int>(type: "int", nullable: false),
+                    Street = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Zipcode = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,25 +26,25 @@ namespace DatabaseConfigClassLibrary.Migrations
                 name: "UserDatas",
                 columns: table => new
                 {
-                    _id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    index = table.Column<int>(type: "int", nullable: false),
-                    age = table.Column<int>(type: "int", nullable: false),
-                    eyeColor = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    company = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    about = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    registered = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    latitude = table.Column<long>(type: "bigint", nullable: true),
-                    longitude = table.Column<float>(type: "real", nullable: true),
-                    tags = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Index = table.Column<int>(type: "int", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
+                    EyeColor = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Company = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    About = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Registered = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Latitude = table.Column<long>(type: "bigint", nullable: true),
+                    Longitude = table.Column<float>(type: "real", nullable: true),
+                    Tags = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AddressId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserDatas", x => x._id);
+                    table.PrimaryKey("PK_UserDatas", x => x.Id);
                     table.ForeignKey(
                         name: "FK_UserDatas_UserAddresses_AddressId",
                         column: x => x.AddressId,

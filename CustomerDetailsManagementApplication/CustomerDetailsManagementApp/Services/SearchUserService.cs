@@ -19,11 +19,11 @@ namespace CustomerDetailsManagementApp.Services
                 var matchedUsers = _context.UserDatas
                     .Where(
                         u =>
-                            u._id.Contains(searchText)
-                            || u.name.Contains(searchText)
-                            || u.company.Contains(searchText)
-                            || u.email.Contains(searchText)
-                            || u.phone.Contains(searchText)
+                            u.Id.Contains(searchText)
+                            || u.Name.Contains(searchText)
+                            || u.Company.Contains(searchText)
+                            || u.Email.Contains(searchText)
+                            || u.Phone.Contains(searchText)
                     )
                     .ToList();
 

@@ -1,4 +1,5 @@
 ﻿using DatabaseConfigClassLibrary.Models;
+using DatabaseConfigClassLibrary.DTO;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
@@ -18,25 +19,25 @@ namespace DatabaseConfigClassLibrary
         }
 
         string filePath =
-            "C:\\Users\\Ishan Kalpadith\\source\\repos\\Language_project\\DatabaseConfigClassLibrary\\UserData.json";
+            "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\UserData.json";
 
         public void ImportDataFromJson()
         {
             if (File.Exists(filePath))
             {
                 var json = File.ReadAllText(filePath);
-                var data = JsonConvert.DeserializeObject<List<UserData>>(json);
+                var data = JsonConvert.DeserializeObject<List<UserDTO>>(json);
 
-                var addressDictionary = new Dictionary<string, AddressData>();
+                var addressDictionary = new Dictionary<string, AddressDetails>();
 
-                foreach (var userData in data)
+                foreach (var User in data)
                 {
-                    var existingUser = _dataService.GetUserByEmail(userData.email);
+                    var existingUser = _dataService.GetUserByEmail(User.email);
 
                     if (existingUser == null)
                     {
-                        var address = userData.address;
-                        var addressData = new AddressData
+                        var address = User.address;
+                        var addressData = new AddressDetails
                         {
                             number = address.number,
                             street = address.street,
@@ -46,13 +47,13 @@ namespace DatabaseConfigClassLibrary
                             AddressId = GenerateUniqueAddressId()
                         };
                         addressDictionary[addressData.AddressId] = addressData;
-                        userData.AddressId = addressData.AddressId;
-                        userData.address = addressData;
+                        User.AddressId = addressData.AddressId;
+                        User.address = addressData;
                     }
                     else
                     {
                         Console.WriteLine(
-                            $"User with email {userData.email} already exists, skipping insertion."
+                            $"User with Email {User.email} already exists, skipping insertion."
                         );
                     }
                 }

@@ -61,12 +61,12 @@ namespace CustomerDetailsManagementApp.Controllers
             return Unauthorized("Invalid username or password");
         }
 
-        // PUT api/User/EditUser/{_id}
+        // PUT api/User/EditUser/{Id}
         [Authorize(Policy = "UserOrAdminPolicy")]
         [HttpPut]
         [MapToApiVersion("1.0")]
-        [Route("EditUser/{_id}")]
-        [Route("v{version:apiVersion}/EditUser/{_id}")]
+        [Route("EditUser/{Id}")]
+        [Route("v{version:apiVersion}/EditUser/{Id}")]
         public async Task<IActionResult> EditUser(string _id, [FromBody] UserUpdateDTO userUpdate)
         {
             var (success, message) = await _editUserService.EditUserAsync(_id, userUpdate);
@@ -79,27 +79,27 @@ namespace CustomerDetailsManagementApp.Controllers
             return BadRequest(message);
         }
 
-        //GET api/User/GetDistance/_id?latitude=value&longitude=value
+        //GET api/User/GetDistance/Id?Latitude=value&Longitude=value
         [Authorize(Policy = "UserOrAdminPolicy")]
         [HttpGet]
         [MapToApiVersion("1.0")]
-        [Route("GetDistance/{_id}")]
-        [Route("v{version:apiVersion}/GetDistance/{_id}")]
+        [Route("GetDistance/{Id}")]
+        [Route("v{version:apiVersion}/GetDistance/{Id}")]
         public IActionResult GetDistance(string _id, double latitude, double longitude)
         {
             try
             {
-                var user = _context.UserDatas.FirstOrDefault(u => u._id == _id);
+                var user = _context.UserDatas.FirstOrDefault(u => u.Id == _id);
 
                 if (user == null)
                 {
                     return NotFound();
                 }
 
-                if (user.latitude.HasValue && user.longitude.HasValue)
+                if (user.Latitude.HasValue && user.Longitude.HasValue)
                 {
-                    double userLatitude = user.latitude.Value;
-                    double userLongitude = user.longitude.Value;
+                    double userLatitude = user.Latitude.Value;
+                    double userLongitude = user.Longitude.Value;
 
                     double distanceInKilometers = _getDistanceService.CalculateDistance(
                         userLatitude,
@@ -112,7 +112,7 @@ namespace CustomerDetailsManagementApp.Controllers
                 }
                 else
                 {
-                    return BadRequest("User's latitude or longitude is missing.");
+                    return BadRequest("User's Latitude or Longitude is missing.");
                 }
             }
             catch (Exception ex)

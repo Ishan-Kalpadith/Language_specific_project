@@ -18,27 +18,27 @@ namespace CustomerDetailsManagementApp.Services
             try
             {
                 var user = await _context.UserDatas
-                    .Include(u => u.address)
-                    .FirstOrDefaultAsync(u => u._id == _id);
+                    .Include(u => u.Address)
+                    .FirstOrDefaultAsync(u => u.Id == _id);
 
                 if (user == null)
                 {
                     return (false, "User not found");
                 }
 
-                if (!string.IsNullOrEmpty(userUpdate.name))
+                if (!string.IsNullOrEmpty(userUpdate.Name))
                 {
-                    user.name = userUpdate.name;
+                    user.Name = userUpdate.Name;
                 }
 
-                if (!string.IsNullOrEmpty(userUpdate.email))
+                if (!string.IsNullOrEmpty(userUpdate.Email))
                 {
-                    user.email = userUpdate.email;
+                    user.Email = userUpdate.Email;
                 }
 
-                if (!string.IsNullOrEmpty(userUpdate.phone))
+                if (!string.IsNullOrEmpty(userUpdate.Phone))
                 {
-                    user.phone = userUpdate.phone;
+                    user.Phone = userUpdate.Phone;
                 }
 
                 _context.Entry(user).State = EntityState.Modified;

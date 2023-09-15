@@ -20,19 +20,19 @@ namespace DatabaseConfigClassLibrary
                 );
             }
         }
-        //manage relatioships between address table and user table
+        //manage relatioships between Address table and user table
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .Entity<UserData>()
-                .HasOne(u => u.address)
+                .HasOne(u => u.Address)
                 .WithMany()
                 .HasForeignKey(u => u.AddressId);
             modelBuilder.Entity<AddressData>().HasKey(a => a.AddressId);
 
             modelBuilder
                 .Entity<UserData>()
-                .Property(u => u.tags)
+                .Property(u => u.Tags)
                 .HasConversion(
                     v => string.Join(",", v),
                     v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList()

@@ -25,7 +25,7 @@ namespace CustomerDetailsManagementApp.Services
                     .ToList();
 
                 var groupedCustomers = customersAndAddresses
-                    .GroupBy(data => data.addressData.zipcode)
+                    .GroupBy(data => data.addressData.Zipcode)
                     .Select(
                         group =>
                             new

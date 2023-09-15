@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatabaseConfigClassLibrary.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230911033830_InitialCreate")]
+    [Migration("20230915080458_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,22 +26,22 @@ namespace DatabaseConfigClassLibrary.Migrations
                     b.Property<string>("AddressId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("city")
+                    b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("number")
+                    b.Property<int>("Number")
                         .HasColumnType("int");
 
-                    b.Property<string>("state")
+                    b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("street")
+                    b.Property<string>("Street")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("zipcode")
+                    b.Property<int>("Zipcode")
                         .HasColumnType("int");
 
                     b.HasKey("AddressId");
@@ -51,53 +51,53 @@ namespace DatabaseConfigClassLibrary.Migrations
 
             modelBuilder.Entity("DatabaseConfigClassLibrary.Models.UserData", b =>
                 {
-                    b.Property<string>("_id")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("About")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AddressId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("about")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("age")
+                    b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<string>("company")
+                    b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("eyeColor")
+                    b.Property<string>("EyeColor")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("gender")
+                    b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("index")
+                    b.Property<int>("Index")
                         .HasColumnType("int");
 
-                    b.Property<long?>("latitude")
+                    b.Property<long?>("Latitude")
                         .HasColumnType("bigint");
 
-                    b.Property<float?>("longitude")
+                    b.Property<float?>("Longitude")
                         .HasColumnType("real");
 
-                    b.Property<string>("name")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("phone")
+                    b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("registered")
+                    b.Property<string>("Registered")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("tags")
+                    b.Property<string>("Tags")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("_id");
+                    b.HasKey("Id");
 
                     b.HasIndex("AddressId");
 
@@ -106,13 +106,13 @@ namespace DatabaseConfigClassLibrary.Migrations
 
             modelBuilder.Entity("DatabaseConfigClassLibrary.Models.UserData", b =>
                 {
-                    b.HasOne("DatabaseConfigClassLibrary.Models.AddressData", "address")
+                    b.HasOne("DatabaseConfigClassLibrary.Models.AddressData", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("address");
+                    b.Navigation("Address");
                 });
 #pragma warning restore 612, 618
         }

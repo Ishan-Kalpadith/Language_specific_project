@@ -10,6 +10,7 @@ E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Proj
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\bin\Debug\net6.0\Humanizer.dll
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -51,6 +52,7 @@ E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Proj
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.AssemblyInfoInputs.cache
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.AssemblyInfo.cs
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.csproj.CoreCompileInputs.cache
+E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.MvcApplicationPartsAssemblyInfo.cs
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.MvcApplicationPartsAssemblyInfo.cache
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.RazorAssemblyInfo.cache
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.RazorAssemblyInfo.cs
@@ -70,5 +72,3 @@ E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Proj
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.pdb
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.genruntimeconfig.cache
 E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\ref\CustomerDetailsManagementApp.dll
-E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
-E:\FIdenz Training Materials\Language Specific Project\CR\Language_Specific_Project\CustomerDetailsManagementApplication\CustomerDetailsManagementApp\obj\Debug\net6.0\CustomerDetailsManagementApp.MvcApplicationPartsAssemblyInfo.cs
