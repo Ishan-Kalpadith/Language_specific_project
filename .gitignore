@@ -1,0 +1,9 @@
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+*.suo
+*.user
+*.sln.docstates
+

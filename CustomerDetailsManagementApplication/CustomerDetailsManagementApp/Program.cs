@@ -1,4 +1,6 @@
 using DatabaseConfigClassLibrary;
+using DatabaseConfigClassLibrary.DTO;
+using DatabaseConfigClassLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -7,6 +9,7 @@ using CustomerDetailsManagementApp.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -91,6 +94,18 @@ builder.Services.AddScoped<GetDistanceService>();
 builder.Services.AddScoped<SearchUserService>();
 builder.Services.AddScoped<GetCustomerListByZipCodeService>();
 builder.Services.AddScoped<GetAllCustomerListService>();
+
+var mapperConfig = new MapperConfiguration(cfg =>
+{
+    cfg.CreateMap<UserUpdateDTO, UserData>()
+       .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+    cfg.CreateMap<UserDTO, UserData>();
+    cfg.CreateMap<UserData, UserDTO>();
+    cfg.CreateMap<AddressDetails, AddressData>();
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())

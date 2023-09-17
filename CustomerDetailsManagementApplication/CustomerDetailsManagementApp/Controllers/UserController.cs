@@ -4,6 +4,7 @@ using DatabaseConfigClassLibrary;
 using Microsoft.AspNetCore.Authorization;
 using CustomerDetailsManagementApp.Services;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using AutoMapper;
 
 namespace CustomerDetailsManagementApp.Controllers
 {
@@ -61,12 +62,12 @@ namespace CustomerDetailsManagementApp.Controllers
             return Unauthorized("Invalid username or password");
         }
 
-        // PUT api/User/EditUser/{Id}
+        // PUT api/User/EditUser/{_id}
         [Authorize(Policy = "UserOrAdminPolicy")]
         [HttpPut]
         [MapToApiVersion("1.0")]
-        [Route("EditUser/{Id}")]
-        [Route("v{version:apiVersion}/EditUser/{Id}")]
+        [Route("EditUser/{_id}")]
+        [Route("v{version:apiVersion}/EditUser/{_id}")]
         public async Task<IActionResult> EditUser(string _id, [FromBody] UserUpdateDTO userUpdate)
         {
             var (success, message) = await _editUserService.EditUserAsync(_id, userUpdate);
@@ -85,11 +86,11 @@ namespace CustomerDetailsManagementApp.Controllers
         [MapToApiVersion("1.0")]
         [Route("GetDistance/{Id}")]
         [Route("v{version:apiVersion}/GetDistance/{Id}")]
-        public IActionResult GetDistance(string _id, double latitude, double longitude)
+        public IActionResult GetDistance(string Id, double latitude, double longitude)
         {
             try
             {
-                var user = _context.UserDatas.FirstOrDefault(u => u.Id == _id);
+                var user = _context.UserDatas.FirstOrDefault(u => u.Id == Id);
 
                 if (user == null)
                 {

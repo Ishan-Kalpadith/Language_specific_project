@@ -1,4 +1,5 @@
-﻿using DatabaseConfigClassLibrary;
+﻿using AutoMapper;
+using DatabaseConfigClassLibrary;
 using DatabaseConfigClassLibrary.DTO;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,11 +8,14 @@ namespace CustomerDetailsManagementApp.Services
     public class EditUserService
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public EditUserService(ApplicationDbContext context)
+        public EditUserService(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
+
 
         public async Task<(bool success, string message)> EditUserAsync(string _id, UserUpdateDTO userUpdate)
         {
@@ -40,6 +44,8 @@ namespace CustomerDetailsManagementApp.Services
                 {
                     user.Phone = userUpdate.Phone;
                 }
+
+                _mapper.Map(userUpdate, user);
 
                 _context.Entry(user).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
