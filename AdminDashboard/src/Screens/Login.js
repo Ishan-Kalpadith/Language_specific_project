@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { API_Login_URL } from "../api/apihelp.js";
 
 const Login = ({ setToken }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [Username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post(
-        "https://localhost:7222/api/User/Login",
-        {
-          username: username,
-          password: password,
-        }
-      );
+      const response = await axios.post(`${API_Login_URL}`, {
+        username: Username,
+        password: Password,
+      });
 
       const token = response.data.access_token;
       setToken(token);
