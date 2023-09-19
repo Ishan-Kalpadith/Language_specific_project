@@ -1,4 +1,3 @@
-using DatabaseConfigClassLibrary;
 using DatabaseConfigClassLibrary.DTO;
 using DatabaseConfigClassLibrary.Models;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +9,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using DatabaseConfigClassLibrary.DatabaseConfig;
+using DatabaseConfigClassLibrary.DataManipulate;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +29,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<DataImporter>();
 builder.Services.AddScoped<DataAccessService>();
 
+//Add Identity framework
+builder.Services
+    .AddIdentity<IdentityUser, IdentityRole>(
+        options => options.SignIn.RequireConfirmedAccount = false
+    )
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
 //Allow cross origin resource sharing for the frontend
 builder.Services.AddCors(options =>
 {
@@ -41,7 +51,12 @@ builder.Services.AddCors(options =>
 
 //validating the JWT token
 builder.Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
@@ -56,26 +71,6 @@ builder.Services
             )
         };
     });
-
-builder.Services.AddSingleton<IAuthorizationHandler, UserOrAdminHandler>();
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy(
-        "AdminPolicy",
-        policy => policy.RequireRole(configuration["Authentication:AdminRole"])
-    );
-    options.AddPolicy(
-        "UserPolicy",
-        policy => policy.RequireRole(configuration["Authentication:UserRole"])
-    );
-    options.AddPolicy(
-        "UserOrAdminPolicy",
-        policy =>
-        {
-            policy.Requirements.Add(new UserOrAdminRequirement());
-        }
-    );
-});
 
 // API versioning configurations
 builder.Services.AddApiVersioning(options =>
@@ -95,10 +90,11 @@ builder.Services.AddScoped<SearchUserService>();
 builder.Services.AddScoped<GetCustomerListByZipCodeService>();
 builder.Services.AddScoped<GetAllCustomerListService>();
 
+//Adding mappers
 var mapperConfig = new MapperConfiguration(cfg =>
 {
     cfg.CreateMap<UserUpdateDTO, UserData>()
-       .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+        .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
     cfg.CreateMap<UserDTO, UserData>();
     cfg.CreateMap<UserData, UserDTO>();
     cfg.CreateMap<AddressDetails, AddressData>();
@@ -108,6 +104,14 @@ IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    SeedData.Initialize(userManager, roleManager);
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

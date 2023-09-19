@@ -1,4 +1,4 @@
-﻿using DatabaseConfigClassLibrary;
+﻿using DatabaseConfigClassLibrary.DatabaseConfig;
 
 namespace CustomerDetailsManagementApp.Services
 {

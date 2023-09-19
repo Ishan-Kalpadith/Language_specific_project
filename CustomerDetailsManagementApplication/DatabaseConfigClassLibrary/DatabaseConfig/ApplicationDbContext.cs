@@ -1,9 +1,12 @@
 ﻿using DatabaseConfigClassLibrary.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace DatabaseConfigClassLibrary
+namespace DatabaseConfigClassLibrary.DatabaseConfig
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         public DbSet<UserData> UserDatas { get; set; }
         public DbSet<AddressData> UserAddresses { get; set; }
@@ -20,6 +23,7 @@ namespace DatabaseConfigClassLibrary
                 );
             }
         }
+
         //manage relatioships between Address table and user table
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +40,25 @@ namespace DatabaseConfigClassLibrary
                 .HasConversion(
                     v => string.Join(",", v),
                     v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList()
+                );
+
+            modelBuilder.Entity<IdentityUser>().ToTable("AspNetUsers");
+            modelBuilder.Entity<IdentityRole>().ToTable("AspNetRoles");
+
+            modelBuilder
+                .Entity<IdentityUserLogin<string>>()
+                .HasKey(l => new { l.LoginProvider, l.ProviderKey });
+            modelBuilder.Entity<IdentityUserRole<string>>().HasKey(r => new { r.UserId, r.RoleId });
+            modelBuilder
+                .Entity<IdentityUserToken<string>>()
+                .HasKey(
+                    t =>
+                        new
+                        {
+                            t.UserId,
+                            t.LoginProvider,
+                            t.Name
+                        }
                 );
         }
     }

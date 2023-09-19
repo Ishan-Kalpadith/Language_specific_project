@@ -14,32 +14,8 @@ namespace CustomerDetailsManagementApp.Services
             _configuration = configuration;
         }
 
-        public (string token, string role) AuthenticateUser(string Username, string Password)
-        {
-            var admin = _configuration["Authentication:AdminUsername"];
-            var adminpw = _configuration["Authentication:AdminPassword"];
-            var user = _configuration["Authentication:UserUsername"];
-            var userpw = _configuration["Authentication:UserPassword"];
-            string validAdminUsername = admin;
-            string validAdminPassword = adminpw;
-            string validUsername = user;
-            string validPassword = userpw;
-
-            if (
-                (Username == validAdminUsername && Password == validAdminPassword)
-                || (Username == validUsername && Password == validPassword)
-            )
-            {
-                string role = (Username == validAdminUsername) ? "admin" : "user";
-                var token = GenerateJwtToken(Username, role);
-
-                return (token, role);
-            }
-
-            return (null, null);
-        }
-
-        private string GenerateJwtToken(string username, string role)
+        
+        public string GenerateJwtToken(string username, string role)
         {
             var claims = new[]
             {

@@ -1,6 +1,7 @@
 ﻿using DatabaseConfigClassLibrary.DTO;
 using DatabaseConfigClassLibrary.Models;
-namespace DatabaseConfigClassLibrary
+
+namespace DatabaseConfigClassLibrary.DatabaseConfig
 {
     public class DataAccessService
     {

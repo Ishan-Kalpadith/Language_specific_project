@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\CustomerDetailsManagementApp.csproj": {}
+    "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\CustomerDetailsManagementApp.csproj": {}
   },
   "projects": {
-    "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\CustomerDetailsManagementApp.csproj": {
+    "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\CustomerDetailsManagementApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\CustomerDetailsManagementApp.csproj",
+        "projectUniqueName": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\CustomerDetailsManagementApp.csproj",
         "projectName": "CustomerDetailsManagementApp",
-        "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\CustomerDetailsManagementApp.csproj",
+        "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\CustomerDetailsManagementApp.csproj",
         "packagesPath": "C:\\Users\\Ishan Kalpadith\\.nuget\\packages\\",
-        "outputPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\obj\\",
+        "outputPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\CustomerDetailsManagementApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ishan Kalpadith\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj": {
-                "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj"
+              "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj": {
+                "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj"
               }
             }
           }
@@ -57,6 +57,10 @@
               "version": "[6.0.0-preview.7.21378.6, )"
             },
             "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
@@ -110,14 +114,14 @@
         }
       }
     },
-    "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj": {
+    "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
+        "projectUniqueName": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
         "projectName": "DatabaseConfigClassLibrary",
-        "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
+        "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
         "packagesPath": "C:\\Users\\Ishan Kalpadith\\.nuget\\packages\\",
-        "outputPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\obj\\",
+        "outputPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ishan Kalpadith\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -153,6 +157,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",

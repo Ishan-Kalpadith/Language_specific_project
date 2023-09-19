@@ -1,7 +1,7 @@
 ﻿using CustomerDetailsManagementApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using DatabaseConfigClassLibrary;
+using DatabaseConfigClassLibrary.DataManipulate;
 
 namespace CustomerDetailsManagementApp.Controllers
 {

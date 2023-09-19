@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using DatabaseConfigClassLibrary;
+using DatabaseConfigClassLibrary.DatabaseConfig;
 using DatabaseConfigClassLibrary.DTO;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,8 +16,10 @@ namespace CustomerDetailsManagementApp.Services
             _mapper = mapper;
         }
 
-
-        public async Task<(bool success, string message)> EditUserAsync(string _id, UserUpdateDTO userUpdate)
+        public async Task<(bool success, string message)> EditUserAsync(
+            string _id,
+            UserUpdateDTO userUpdate
+        )
         {
             try
             {

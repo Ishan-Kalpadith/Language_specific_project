@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DatabaseConfigClassLibrary.DTO;
-using DatabaseConfigClassLibrary;
 using Microsoft.AspNetCore.Authorization;
 using CustomerDetailsManagementApp.Services;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using DatabaseConfigClassLibrary.DatabaseConfig;
 
 namespace CustomerDetailsManagementApp.Controllers
 {
@@ -21,6 +22,8 @@ namespace CustomerDetailsManagementApp.Controllers
         private readonly SearchUserService _searchUserService;
         private readonly GetCustomerListByZipCodeService _getCustomerListService;
         private readonly GetAllCustomerListService _getAllCustomerListService;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public UserController(
             ApplicationDbContext context,
@@ -30,7 +33,9 @@ namespace CustomerDetailsManagementApp.Controllers
             GetDistanceService getDistanceService,
             SearchUserService searchUserService,
             GetCustomerListByZipCodeService getCustomerListService,
-            GetAllCustomerListService getAllCustomerListService
+            GetAllCustomerListService getAllCustomerListService,
+            UserManager<IdentityUser> userManager,
+            RoleManager<IdentityRole> roleManager
         )
         {
             _context = context;
@@ -41,21 +46,26 @@ namespace CustomerDetailsManagementApp.Controllers
             _searchUserService = searchUserService;
             _getCustomerListService = getCustomerListService;
             _getAllCustomerListService = getAllCustomerListService;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         [HttpPost]
         [MapToApiVersion("1.0")]
         [Route("Login")]
         [Route("v{version:apiVersion}/Login")]
-        public IActionResult Login([FromBody] LoginDTO loginDTO)
+        public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
         {
-            var (token, role) = _loginService.AuthenticateUser(
-                loginDTO.Username,
-                loginDTO.Password
-            );
+            var user = await _userManager.FindByNameAsync(loginDTO.Username);
 
-            if (token != null)
+            if (user != null && await _userManager.CheckPasswordAsync(user, loginDTO.Password))
             {
+                var roles = await _userManager.GetRolesAsync(user);
+                var token = _loginService.GenerateJwtToken(
+                    loginDTO.Username,
+                    roles.FirstOrDefault()
+                );
+
                 return Ok(new { access_token = token });
             }
 
@@ -63,7 +73,7 @@ namespace CustomerDetailsManagementApp.Controllers
         }
 
         // PUT api/User/EditUser/{_id}
-        [Authorize(Policy = "UserOrAdminPolicy")]
+        [Authorize(Roles = "Admin,Client")]
         [HttpPut]
         [MapToApiVersion("1.0")]
         [Route("EditUser/{_id}")]
@@ -81,7 +91,7 @@ namespace CustomerDetailsManagementApp.Controllers
         }
 
         //GET api/User/GetDistance/Id?Latitude=value&Longitude=value
-        [Authorize(Policy = "UserOrAdminPolicy")]
+        [Authorize(Roles = "Admin,Client")]
         [HttpGet]
         [MapToApiVersion("1.0")]
         [Route("GetDistance/{Id}")]
@@ -123,7 +133,7 @@ namespace CustomerDetailsManagementApp.Controllers
         }
 
         //GET api/User/SearchUser?searchText=text to search
-        [Authorize(Policy = "UserOrAdminPolicy")]
+        [Authorize(Roles = "Admin,Client")]
         [HttpGet]
         [MapToApiVersion("1.0")]
         [Route("SearchUser")]
@@ -142,7 +152,7 @@ namespace CustomerDetailsManagementApp.Controllers
         }
 
         //GET api/User/GetCustomerListByZipCode
-        [Authorize(Policy = "UserOrAdminPolicy")]
+        [Authorize(Roles = "Admin,Client")]
         [HttpGet]
         [MapToApiVersion("1.0")]
         [Route("GetCustomerListByZipCode")]
@@ -161,7 +171,7 @@ namespace CustomerDetailsManagementApp.Controllers
         }
 
         //GET api/User/GetAllCustomerList
-        [Authorize(Policy = "AdminPolicy")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [MapToApiVersion("1.0")]
         [Route("GetAllCustomerList")]

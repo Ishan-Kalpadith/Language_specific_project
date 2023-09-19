@@ -6,8 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using DatabaseConfigClassLibrary.DatabaseConfig;
 
-namespace DatabaseConfigClassLibrary
+namespace DatabaseConfigClassLibrary.DataManipulate
 {
     public class DataImporter
     {
@@ -19,7 +20,7 @@ namespace DatabaseConfigClassLibrary
         }
 
         string filePath =
-            "E:\\FIdenz Training Materials\\Language Specific Project\\CR\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\UserData.json";
+            "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\UserData\\UserData.json";
 
         public void ImportDataFromJson()
         {
