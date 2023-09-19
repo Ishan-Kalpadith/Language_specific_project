@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using DatabaseConfigClassLibrary.DatabaseConfig;
+using DatabaseConfigClassLibrary.Repositories;
+using DatabaseConfigClassLibrary.RepositoryImpl;
 
 namespace CustomerDetailsManagementApp.Controllers
 {
@@ -24,6 +26,8 @@ namespace CustomerDetailsManagementApp.Controllers
         private readonly GetAllCustomerListService _getAllCustomerListService;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
         public UserController(
             ApplicationDbContext context,
@@ -35,7 +39,9 @@ namespace CustomerDetailsManagementApp.Controllers
             GetCustomerListByZipCodeService getCustomerListService,
             GetAllCustomerListService getAllCustomerListService,
             UserManager<IdentityUser> userManager,
-            RoleManager<IdentityRole> roleManager
+            RoleManager<IdentityRole> roleManager,
+            IUserRepository userRepository,
+            IMapper mapper
         )
         {
             _context = context;
@@ -48,6 +54,8 @@ namespace CustomerDetailsManagementApp.Controllers
             _getAllCustomerListService = getAllCustomerListService;
             _userManager = userManager;
             _roleManager = roleManager;
+            _userRepository = userRepository;
+            _mapper = mapper;
         }
 
         [HttpPost]
@@ -56,11 +64,11 @@ namespace CustomerDetailsManagementApp.Controllers
         [Route("v{version:apiVersion}/Login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
         {
-            var user = await _userManager.FindByNameAsync(loginDTO.Username);
+            var user = await _userRepository.FindByNameAsync(loginDTO.Username);
 
-            if (user != null && await _userManager.CheckPasswordAsync(user, loginDTO.Password))
+            if (user != null && await _userRepository.CheckPasswordAsync(user, loginDTO.Password))
             {
-                var roles = await _userManager.GetRolesAsync(user);
+                var roles = await _userRepository.GetRolesAsync(user);
                 var token = _loginService.GenerateJwtToken(
                     loginDTO.Username,
                     roles.FirstOrDefault()
@@ -80,14 +88,21 @@ namespace CustomerDetailsManagementApp.Controllers
         [Route("v{version:apiVersion}/EditUser/{_id}")]
         public async Task<IActionResult> EditUser(string _id, [FromBody] UserUpdateDTO userUpdate)
         {
-            var (success, message) = await _editUserService.EditUserAsync(_id, userUpdate);
-
-            if (success)
+            try
             {
-                return Ok(message);
-            }
+                var (success, message) = await _editUserService.EditUserAsync(_id, userUpdate);
 
-            return BadRequest(message);
+                if (success)
+                {
+                    return Ok(message);
+                }
+
+                return BadRequest(message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error: {ex.Message}");
+            }
         }
 
         //GET api/User/GetDistance/Id?Latitude=value&Longitude=value
@@ -100,21 +115,17 @@ namespace CustomerDetailsManagementApp.Controllers
         {
             try
             {
-                var user = _context.UserDatas.FirstOrDefault(u => u.Id == Id);
+                var userLatitude = _userRepository.GetLatitude(Id);
+                var userLongitude = _userRepository.GetLongitude(Id);
 
-                if (user == null)
+                if (userLatitude.HasValue && userLongitude.HasValue)
                 {
-                    return NotFound();
-                }
-
-                if (user.Latitude.HasValue && user.Longitude.HasValue)
-                {
-                    double userLatitude = user.Latitude.Value;
-                    double userLongitude = user.Longitude.Value;
+                    double userLat = userLatitude.Value;
+                    double userLon = userLongitude.Value;
 
                     double distanceInKilometers = _getDistanceService.CalculateDistance(
-                        userLatitude,
-                        userLongitude,
+                        userLat,
+                        userLon,
                         latitude,
                         longitude
                     );

@@ -1,45 +1,23 @@
-﻿using DatabaseConfigClassLibrary.DatabaseConfig;
+﻿using System;
+using System.Collections.Generic;
+using DatabaseConfigClassLibrary.Repositories;
 
 namespace CustomerDetailsManagementApp.Services
 {
     public class GetCustomerListByZipCodeService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUserRepository _userRepository;
 
-        public GetCustomerListByZipCodeService(ApplicationDbContext context)
+        public GetCustomerListByZipCodeService(IUserRepository userRepository)
         {
-            _context = context;
+            _userRepository = userRepository;
         }
 
         public List<object> GetCustomersByZipCode()
         {
             try
             {
-                var customersAndAddresses = _context.UserDatas
-                    .Join(
-                        _context.UserAddresses,
-                        userData => userData.AddressId,
-                        addressData => addressData.AddressId,
-                        (userData, addressData) => new { userData, addressData }
-                    )
-                    .ToList();
-
-                var groupedCustomers = customersAndAddresses
-                    .GroupBy(data => data.addressData.Zipcode)
-                    .Select(
-                        group =>
-                            new
-                            {
-                                ZipCode = group.Key,
-                                Customers = group.Select(data => data.userData).ToList()
-                            }
-                    )
-                    .ToList();
-
-                return groupedCustomers.Select(item => new 
-                { 
-                    item.ZipCode, item.Customers
-                }).ToList<object>();
+                return _userRepository.GetCustomersByZipCode();
             }
             catch (Exception ex)
             {

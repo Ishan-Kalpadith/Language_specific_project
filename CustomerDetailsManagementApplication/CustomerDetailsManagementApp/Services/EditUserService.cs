@@ -1,18 +1,21 @@
 ﻿using AutoMapper;
 using DatabaseConfigClassLibrary.DatabaseConfig;
 using DatabaseConfigClassLibrary.DTO;
+using DatabaseConfigClassLibrary.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Threading.Tasks;
 
 namespace CustomerDetailsManagementApp.Services
 {
     public class EditUserService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public EditUserService(ApplicationDbContext context, IMapper mapper)
+        public EditUserService(IUserRepository userRepository, IMapper mapper)
         {
-            _context = context;
+            _userRepository = userRepository;
             _mapper = mapper;
         }
 
@@ -23,9 +26,7 @@ namespace CustomerDetailsManagementApp.Services
         {
             try
             {
-                var user = await _context.UserDatas
-                    .Include(u => u.Address)
-                    .FirstOrDefaultAsync(u => u.Id == _id);
+                var user = await _userRepository.GetUserByIdAsync(_id);
 
                 if (user == null)
                 {
@@ -47,10 +48,7 @@ namespace CustomerDetailsManagementApp.Services
                     user.Phone = userUpdate.Phone;
                 }
 
-                _mapper.Map(userUpdate, user);
-
-                _context.Entry(user).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
+                await _userRepository.UpdateUserAsync(user);
 
                 return (true, "User updated successfully");
             }

@@ -12,6 +12,8 @@ using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using DatabaseConfigClassLibrary.DatabaseConfig;
 using DatabaseConfigClassLibrary.DataManipulate;
+using DatabaseConfigClassLibrary.Repositories;
+using DatabaseConfigClassLibrary.RepositoryImpl;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -81,6 +83,9 @@ builder.Services.AddApiVersioning(options =>
     options.ApiVersionReader = new UrlSegmentApiVersionReader();
     options.ApiVersionSelector = new CurrentImplementationApiVersionSelector(options);
 });
+
+// Register the repository implementations
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 //Defining services related to APIs
 builder.Services.AddScoped<LoginService>();

@@ -14,7 +14,6 @@ namespace CustomerDetailsManagementApp.Services
             _configuration = configuration;
         }
 
-        
         public string GenerateJwtToken(string username, string role)
         {
             var claims = new[]

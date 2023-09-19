@@ -1,37 +1,28 @@
-﻿using DatabaseConfigClassLibrary.DatabaseConfig;
+﻿using System;
+using System.Collections.Generic;
 using DatabaseConfigClassLibrary.Models;
+using DatabaseConfigClassLibrary.Repositories;
 
 namespace CustomerDetailsManagementApp.Services
 {
     public class SearchUserService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUserRepository _userRepository;
 
-        public SearchUserService(ApplicationDbContext context)
+        public SearchUserService(IUserRepository userRepository)
         {
-            _context = context;
+            _userRepository = userRepository;
         }
 
         public List<UserData> SearchUsers(string searchText)
         {
             try
             {
-                var matchedUsers = _context.UserDatas
-                    .Where(
-                        u =>
-                            u.Id.Contains(searchText)
-                            || u.Name.Contains(searchText)
-                            || u.Company.Contains(searchText)
-                            || u.Email.Contains(searchText)
-                            || u.Phone.Contains(searchText)
-                    )
-                    .ToList();
-
-                return matchedUsers;
+                return _userRepository.SearchUsers(searchText);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error: {ex.Message}");
+                throw ex;
             }
         }
     }
