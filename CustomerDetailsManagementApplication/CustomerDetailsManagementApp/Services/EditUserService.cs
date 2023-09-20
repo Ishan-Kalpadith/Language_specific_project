@@ -2,6 +2,7 @@
 using DatabaseConfigClassLibrary.DatabaseConfig;
 using DatabaseConfigClassLibrary.DTO;
 using DatabaseConfigClassLibrary.Repositories;
+using DatabaseConfigClassLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
@@ -33,20 +34,7 @@ namespace CustomerDetailsManagementApp.Services
                     return (false, "User not found");
                 }
 
-                if (!string.IsNullOrEmpty(userUpdate.Name))
-                {
-                    user.Name = userUpdate.Name;
-                }
-
-                if (!string.IsNullOrEmpty(userUpdate.Email))
-                {
-                    user.Email = userUpdate.Email;
-                }
-
-                if (!string.IsNullOrEmpty(userUpdate.Phone))
-                {
-                    user.Phone = userUpdate.Phone;
-                }
+                _mapper.Map(userUpdate, user);
 
                 await _userRepository.UpdateUserAsync(user);
 
