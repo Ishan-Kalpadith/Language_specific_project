@@ -89,7 +89,6 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 //Defining services related to APIs
 builder.Services.AddScoped<LoginService>();
-builder.Services.AddScoped<LoginRequestService>();
 builder.Services.AddScoped<EditUserService>();
 builder.Services.AddScoped<GetDistanceService>();
 builder.Services.AddScoped<SearchUserService>();
@@ -101,6 +100,9 @@ var mapperConfig = new MapperConfiguration(cfg =>
 {
     cfg.CreateMap<UserUpdateDTO, UserData>()
         .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+    cfg.CreateMap<UserDTO, UserData>();
+    cfg.CreateMap<UserData, UserDTO>();
+    cfg.CreateMap<AddressDetails, AddressData>();
 });
 
 IMapper mapper = mapperConfig.CreateMapper();

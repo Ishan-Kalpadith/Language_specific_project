@@ -27,34 +27,34 @@ namespace DatabaseConfigClassLibrary.DataManipulate
             if (File.Exists(filePath))
             {
                 var json = File.ReadAllText(filePath);
-                var data = JsonConvert.DeserializeObject<List<UserData>>(json);
+                var data = JsonConvert.DeserializeObject<List<UserDTO>>(json);
 
-                var addressDictionary = new Dictionary<string, AddressData>();
+                var addressDictionary = new Dictionary<string, AddressDetails>();
 
                 foreach (var User in data)
                 {
-                    var existingUser = _dataService.GetUserByEmail(User.Email);
+                    var existingUser = _dataService.GetUserByEmail(User.email);
 
                     if (existingUser == null)
                     {
-                        var address = User.Address;
-                        var addressData = new AddressData
+                        var address = User.address;
+                        var addressData = new AddressDetails
                         {
-                            Number = address.Number,
-                            Street = address.Street,
-                            City = address.City,
-                            State = address.State,
-                            Zipcode = address.Zipcode,
+                            number = address.number,
+                            street = address.street,
+                            city = address.city,
+                            state = address.state,
+                            zipcode = address.zipcode,
                             AddressId = GenerateUniqueAddressId()
                         };
                         addressDictionary[addressData.AddressId] = addressData;
                         User.AddressId = addressData.AddressId;
-                        User.Address = addressData;
+                        User.address = addressData;
                     }
                     else
                     {
                         Console.WriteLine(
-                            $"User with Email {User.Email} already exists, skipping insertion."
+                            $"User with Email {User.email} already exists, skipping insertion."
                         );
                     }
                 }

@@ -49,9 +49,8 @@ namespace DatabaseConfigClassLibrary.Migrations
 
             modelBuilder.Entity("DatabaseConfigClassLibrary.Models.UserData", b =>
                 {
-                    b.Property<string>("_id")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("Id");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("About")
                         .HasColumnType("nvarchar(max)");
@@ -96,7 +95,7 @@ namespace DatabaseConfigClassLibrary.Migrations
                     b.Property<string>("Tags")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("_id");
+                    b.HasKey("Id");
 
                     b.HasIndex("AddressId");
 

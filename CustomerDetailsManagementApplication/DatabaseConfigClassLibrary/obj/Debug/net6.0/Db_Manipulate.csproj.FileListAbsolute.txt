@@ -1,0 +1,28 @@
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\bin\Debug\net6.0\Db_Manipulate.deps.json
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\bin\Debug\net6.0\Db_Manipulate.runtimeconfig.json
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\bin\Debug\net6.0\Db_Manipulate.dll
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\bin\Debug\net6.0\Db_Manipulate.pdb
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.csproj.AssemblyReference.cache
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.AssemblyInfoInputs.cache
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.AssemblyInfo.cs
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.csproj.CoreCompileInputs.cache
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.dll
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\refint\Db_Manipulate.dll
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.pdb
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.genruntimeconfig.cache
+C:\Users\Ishan Kalpadith\source\repos\Language_project\Db_Manipulate\obj\Debug\net6.0\ref\Db_Manipulate.dll
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\bin\Debug\net6.0\Db_Manipulate.deps.json
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\bin\Debug\net6.0\Db_Manipulate.runtimeconfig.json
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\bin\Debug\net6.0\Db_Manipulate.dll
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\bin\Debug\net6.0\Db_Manipulate.pdb
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.csproj.AssemblyReference.cache
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.GeneratedMSBuildEditorConfig.editorconfig
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.AssemblyInfoInputs.cache
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.AssemblyInfo.cs
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.csproj.CoreCompileInputs.cache
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.dll
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\refint\Db_Manipulate.dll
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.pdb
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\Db_Manipulate.genruntimeconfig.cache
+E:\FIdenz Training Materials\Language Specific Project\Assignment\Language_Specific_Project\.NetApp\Db_Manipulate\obj\Debug\net6.0\ref\Db_Manipulate.dll
