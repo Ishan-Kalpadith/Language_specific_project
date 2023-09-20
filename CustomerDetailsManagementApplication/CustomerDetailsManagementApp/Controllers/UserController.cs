@@ -19,6 +19,7 @@ namespace CustomerDetailsManagementApp.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IConfiguration _configuration;
         private readonly LoginService _loginService;
+        private readonly LoginRequestService _loginRequestService;
         private readonly EditUserService _editUserService;
         private readonly GetDistanceService _getDistanceService;
         private readonly SearchUserService _searchUserService;
@@ -33,6 +34,7 @@ namespace CustomerDetailsManagementApp.Controllers
             ApplicationDbContext context,
             IConfiguration configuration,
             LoginService loginService,
+            LoginRequestService loginRequestService,
             EditUserService editUserService,
             GetDistanceService getDistanceService,
             SearchUserService searchUserService,
@@ -47,6 +49,7 @@ namespace CustomerDetailsManagementApp.Controllers
             _context = context;
             _configuration = configuration;
             _loginService = loginService;
+            _loginRequestService = loginRequestService;
             _editUserService = editUserService;
             _getDistanceService = getDistanceService;
             _searchUserService = searchUserService;
@@ -62,15 +65,18 @@ namespace CustomerDetailsManagementApp.Controllers
         [MapToApiVersion("1.0")]
         [Route("Login")]
         [Route("v{version:apiVersion}/Login")]
-        public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
+        public async Task<IActionResult> Login([FromBody] LoginRequestService _loginRequestService)
         {
-            var user = await _userRepository.FindByNameAsync(loginDTO.Username);
+            var user = await _userRepository.FindByNameAsync(_loginRequestService.Username);
 
-            if (user != null && await _userRepository.CheckPasswordAsync(user, loginDTO.Password))
+            if (
+                user != null
+                && await _userRepository.CheckPasswordAsync(user, _loginRequestService.Password)
+            )
             {
                 var roles = await _userRepository.GetRolesAsync(user);
                 var token = _loginService.GenerateJwtToken(
-                    loginDTO.Username,
+                    _loginRequestService.Username,
                     roles.FirstOrDefault()
                 );
 

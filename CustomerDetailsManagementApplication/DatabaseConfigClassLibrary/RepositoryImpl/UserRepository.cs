@@ -24,7 +24,7 @@ namespace DatabaseConfigClassLibrary.RepositoryImpl
 
         public async Task<UserData> GetUserByIdAsync(string userId)
         {
-            return await _context.UserDatas.FirstOrDefaultAsync(u => u.Id == userId);
+            return await _context.UserDatas.FirstOrDefaultAsync(u => u._id == userId);
         }
 
         public async Task UpdateUserAsync(UserData user)
@@ -60,7 +60,7 @@ namespace DatabaseConfigClassLibrary.RepositoryImpl
         {
             try
             {
-                var user = _context.UserDatas.FirstOrDefault(u => u.Id == userId);
+                var user = _context.UserDatas.FirstOrDefault(u => u._id == userId);
                 return user?.Latitude;
             }
             catch (Exception ex)
@@ -73,7 +73,7 @@ namespace DatabaseConfigClassLibrary.RepositoryImpl
         {
             try
             {
-                var user = _context.UserDatas.FirstOrDefault(u => u.Id == userId);
+                var user = _context.UserDatas.FirstOrDefault(u => u._id == userId);
                 return user?.Longitude;
             }
             catch (Exception ex)
@@ -124,7 +124,7 @@ namespace DatabaseConfigClassLibrary.RepositoryImpl
                 var matchedUsers = _context.UserDatas
                     .Where(
                         u =>
-                            u.Id.Contains(searchText)
+                            u._id.Contains(searchText)
                             || u.Name.Contains(searchText)
                             || u.Company.Contains(searchText)
                             || u.Email.Contains(searchText)

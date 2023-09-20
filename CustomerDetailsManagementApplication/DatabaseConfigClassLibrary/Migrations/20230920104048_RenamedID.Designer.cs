@@ -4,14 +4,16 @@ using DatabaseConfigClassLibrary.DatabaseConfig;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DatabaseConfigClassLibrary.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230920104048_RenamedID")]
+    partial class RenamedID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,8 +52,7 @@ namespace DatabaseConfigClassLibrary.Migrations
             modelBuilder.Entity("DatabaseConfigClassLibrary.Models.UserData", b =>
                 {
                     b.Property<string>("_id")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("Id");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("About")
                         .HasColumnType("nvarchar(max)");
