@@ -29,8 +29,8 @@ const Table = ({ userData }) => {
       </thead>
       <tbody>
         {userData.map((user) => (
-          <tr key={user.userData.id}>
-            <td>{user.userData.id}</td>
+          <tr key={user.userData._id}>
+            <td>{user.userData._id}</td>
             <td>{user.userData.index}</td>
             <td>{user.userData.age}</td>
             <td>{user.userData.eyeColor}</td>
