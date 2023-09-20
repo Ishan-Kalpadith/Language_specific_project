@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DatabaseConfigClassLibrary.DatabaseConfig;
+using System.Linq;
+
 
 namespace DatabaseConfigClassLibrary.DataManipulate
 {
@@ -27,34 +29,34 @@ namespace DatabaseConfigClassLibrary.DataManipulate
             if (File.Exists(filePath))
             {
                 var json = File.ReadAllText(filePath);
-                var data = JsonConvert.DeserializeObject<List<UserDTO>>(json);
+                var data = JsonConvert.DeserializeObject<List<UserData>>(json);
 
-                var addressDictionary = new Dictionary<string, AddressDetails>();
+                var addressDictionary = new Dictionary<string, AddressData>();
 
                 foreach (var User in data)
                 {
-                    var existingUser = _dataService.GetUserByEmail(User.email);
+                    var existingUser = _dataService.GetUserByEmail(User.Email);
 
                     if (existingUser == null)
                     {
-                        var address = User.address;
-                        var addressData = new AddressDetails
+                        var address = User.Address;
+                        var addressData = new AddressData
                         {
-                            number = address.number,
-                            street = address.street,
-                            city = address.city,
-                            state = address.state,
-                            zipcode = address.zipcode,
+                            Number = address.Number,
+                            Street = address.Street,
+                            City = address.City,
+                            State = address.State,
+                            Zipcode = address.Zipcode,
                             AddressId = GenerateUniqueAddressId()
                         };
                         addressDictionary[addressData.AddressId] = addressData;
                         User.AddressId = addressData.AddressId;
-                        User.address = addressData;
+                        User.Address = addressData;
                     }
                     else
                     {
                         Console.WriteLine(
-                            $"User with Email {User.email} already exists, skipping insertion."
+                            $"User with Email {User.Email} already exists, skipping insertion."
                         );
                     }
                 }

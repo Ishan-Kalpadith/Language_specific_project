@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "InKYN4vGQw8RvNUg/n97NFBdN9v1Zj44UStXg0i/qU8ksSLPwG01eR7jec0jeudbXoKNPaHgmK20O/r6PRCrxA==",
+  "dgSpecHash": "HjreT5JDP6F8mgLZvF+zxiHJxjELxDEdpYG+ATEJ8/2rFclbSoHEVM1tQ9MUTEE1RFNQZ8tcMqrmHIYSsihfWQ==",
   "success": true,
-  "projectFilePath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
+  "projectFilePath": "E:\\FIdenz Training Materials\\Language Specific Project\\CRCopyOriginal\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ishan Kalpadith\\.nuget\\packages\\auth0.aspnetcore.authentication\\1.3.1\\auth0.aspnetcore.authentication.1.3.1.nupkg.sha512",
     "C:\\Users\\Ishan Kalpadith\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",

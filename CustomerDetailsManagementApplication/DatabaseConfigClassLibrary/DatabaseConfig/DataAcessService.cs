@@ -17,26 +17,26 @@ namespace DatabaseConfigClassLibrary.DatabaseConfig
             return _dbContext.UserDatas.FirstOrDefault(u => u.Email == email);
         }
 
-        public void ImportUserData(IEnumerable<UserDTO> userDataList)
+        public void ImportUserData(IEnumerable<UserData> userDataList)
         {
             foreach (var userData in userDataList)
             {
                 var newUser = new UserData
                 {
-                    Id = userData._id,
-                    Index = userData.index,
-                    Age = userData.age,
-                    EyeColor = userData.eyeColor,
-                    Name = userData.name,
-                    Gender = userData.gender,
-                    Company = userData.company,
-                    Email = userData.email,
-                    Phone = userData.phone,
-                    About = userData.about,
-                    Registered = userData.registered,
-                    Latitude = userData.latitude,
-                    Longitude = userData.longitude,
-                    Tags = userData.tags,
+                    _id = userData._id,
+                    Index = userData.Index,
+                    Age = userData.Age,
+                    EyeColor = userData.EyeColor,
+                    Name = userData.Name,
+                    Gender = userData.Gender,
+                    Company = userData.Company,
+                    Email = userData.Email,
+                    Phone = userData.Phone,
+                    About = userData.About,
+                    Registered = userData.Registered,
+                    Latitude = userData.Latitude,
+                    Longitude = userData.Longitude,
+                    Tags = userData.Tags,
                     AddressId = userData.AddressId
                 };
                 var trackedUser = _dbContext.UserDatas.Find(userData._id);
@@ -49,18 +49,18 @@ namespace DatabaseConfigClassLibrary.DatabaseConfig
             }
         }
 
-        public void ImportUserAddress(IEnumerable<AddressDetails> userAddressList)
+        public void ImportUserAddress(IEnumerable<AddressData> userAddressList)
         {
             foreach (var address in userAddressList)
             {
                 var addressData = new AddressData
                 {
                     AddressId = address.AddressId,
-                    Number = address.number,
-                    Street = address.street,
-                    City = address.city,
-                    State = address.state,
-                    Zipcode = address.zipcode
+                    Number = address.Number,
+                    Street = address.Street,
+                    City = address.City,
+                    State = address.State,
+                    Zipcode = address.Zipcode
                 };
                 _dbContext.UserAddresses.Add(addressData);
                 _dbContext.SaveChanges();

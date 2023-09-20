@@ -3396,11 +3396,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
+      "projectUniqueName": "E:\\FIdenz Training Materials\\Language Specific Project\\CRCopyOriginal\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
       "projectName": "DatabaseConfigClassLibrary",
-      "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
+      "projectPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CRCopyOriginal\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\DatabaseConfigClassLibrary.csproj",
       "packagesPath": "C:\\Users\\Ishan Kalpadith\\.nuget\\packages\\",
-      "outputPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CR copy\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\obj\\",
+      "outputPath": "E:\\FIdenz Training Materials\\Language Specific Project\\CRCopyOriginal\\Language_Specific_Project\\CustomerDetailsManagementApplication\\DatabaseConfigClassLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ishan Kalpadith\\AppData\\Roaming\\NuGet\\NuGet.Config",
