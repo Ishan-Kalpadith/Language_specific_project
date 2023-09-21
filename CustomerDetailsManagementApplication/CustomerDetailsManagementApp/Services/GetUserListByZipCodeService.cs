@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using CustomerDetailsManagementApp.Services.ServiceInterfaces;
 using DatabaseConfigClassLibrary.Repositories;
 
 namespace CustomerDetailsManagementApp.Services
 {
-    public class GetCustomerListByZipCodeService
+    public class GetCustomerListByZipCodeService : IGetCustomerListByZipCodeService
     {
         private readonly IUserRepository _userRepository;
 

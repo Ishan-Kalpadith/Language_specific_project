@@ -22,3 +22,4 @@ namespace DatabaseConfigClassLibrary.Repositories
         Task<bool> CheckPasswordAsync(IdentityUser user, string password);
     }
 }
+ 

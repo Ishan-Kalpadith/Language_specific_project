@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using DatabaseConfigClassLibrary.DatabaseConfig;
 using DatabaseConfigClassLibrary.Repositories;
 using DatabaseConfigClassLibrary.RepositoryImpl;
+using CustomerDetailsManagementApp.Services.ServiceInterfaces;
 
 namespace CustomerDetailsManagementApp.Controllers
 {
@@ -18,13 +19,13 @@ namespace CustomerDetailsManagementApp.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IConfiguration _configuration;
-        private readonly LoginService _loginService;
-        private readonly LoginRequestService _loginRequestService;
-        private readonly EditUserService _editUserService;
-        private readonly GetDistanceService _getDistanceService;
-        private readonly SearchUserService _searchUserService;
-        private readonly GetCustomerListByZipCodeService _getCustomerListService;
-        private readonly GetAllCustomerListService _getAllCustomerListService;
+        private readonly ILoginService _loginService;
+        private readonly ILoginRequestService _loginRequestService;
+        private readonly IEditUserService _editUserService;
+        private readonly IGetDistanceService _getDistanceService;
+        private readonly ISearchUserService _searchUserService;
+        private readonly IGetCustomerListByZipCodeService _getCustomerListService;
+        private readonly IGetAllCustomerListService _getAllCustomerListService;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IUserRepository _userRepository;
@@ -33,13 +34,13 @@ namespace CustomerDetailsManagementApp.Controllers
         public UserController(
             ApplicationDbContext context,
             IConfiguration configuration,
-            LoginService loginService,
-            LoginRequestService loginRequestService,
-            EditUserService editUserService,
-            GetDistanceService getDistanceService,
-            SearchUserService searchUserService,
-            GetCustomerListByZipCodeService getCustomerListService,
-            GetAllCustomerListService getAllCustomerListService,
+            ILoginService loginService,
+            ILoginRequestService loginRequestService,
+            IEditUserService editUserService,
+            IGetDistanceService getDistanceService,
+            ISearchUserService searchUserService,
+            IGetCustomerListByZipCodeService getCustomerListService,
+            IGetAllCustomerListService getAllCustomerListService,
             UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
             IUserRepository userRepository,

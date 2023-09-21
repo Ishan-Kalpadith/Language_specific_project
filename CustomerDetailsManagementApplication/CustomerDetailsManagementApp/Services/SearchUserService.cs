@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using CustomerDetailsManagementApp.Services.ServiceInterfaces;
 using DatabaseConfigClassLibrary.Models;
 using DatabaseConfigClassLibrary.Repositories;
 
 namespace CustomerDetailsManagementApp.Services
 {
-    public class SearchUserService
+    public class SearchUserService : ISearchUserService
     {
         private readonly IUserRepository _userRepository;
 

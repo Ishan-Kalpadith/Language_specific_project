@@ -6,10 +6,11 @@ using DatabaseConfigClassLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
+using CustomerDetailsManagementApp.Services.ServiceInterfaces;
 
 namespace CustomerDetailsManagementApp.Services
 {
-    public class EditUserService
+    public class EditUserService : IEditUserService
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;

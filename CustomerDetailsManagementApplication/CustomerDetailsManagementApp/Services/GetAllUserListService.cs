@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using CustomerDetailsManagementApp.Services.ServiceInterfaces;
 using DatabaseConfigClassLibrary.DatabaseConfig;
 using DatabaseConfigClassLibrary.Repositories;
 
 namespace CustomerDetailsManagementApp.Services
 {
-    public class GetAllCustomerListService
+    public class GetAllCustomerListService : IGetAllCustomerListService
     {
         private readonly IUserRepository _userRepository;
 

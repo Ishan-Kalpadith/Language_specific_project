@@ -14,6 +14,7 @@ using DatabaseConfigClassLibrary.DatabaseConfig;
 using DatabaseConfigClassLibrary.DataManipulate;
 using DatabaseConfigClassLibrary.Repositories;
 using DatabaseConfigClassLibrary.RepositoryImpl;
+using CustomerDetailsManagementApp.Services.ServiceInterfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -87,14 +88,14 @@ builder.Services.AddApiVersioning(options =>
 // Register the repository implementations
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-//Defining services related to APIs
-builder.Services.AddScoped<LoginService>();
-builder.Services.AddScoped<LoginRequestService>();
-builder.Services.AddScoped<EditUserService>();
-builder.Services.AddScoped<GetDistanceService>();
-builder.Services.AddScoped<SearchUserService>();
-builder.Services.AddScoped<GetCustomerListByZipCodeService>();
-builder.Services.AddScoped<GetAllCustomerListService>();
+//Defining services related to APIs with interfaces
+builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<ILoginRequestService, LoginRequestService>();
+builder.Services.AddScoped<IEditUserService, EditUserService>();
+builder.Services.AddScoped<IGetDistanceService, GetDistanceService>();
+builder.Services.AddScoped<ISearchUserService, SearchUserService>();
+builder.Services.AddScoped<IGetCustomerListByZipCodeService, GetCustomerListByZipCodeService>();
+builder.Services.AddScoped<IGetAllCustomerListService, GetAllCustomerListService>();
 
 //Adding mappers
 var mapperConfig = new MapperConfiguration(cfg =>

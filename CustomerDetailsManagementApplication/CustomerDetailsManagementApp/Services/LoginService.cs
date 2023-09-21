@@ -1,11 +1,12 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using CustomerDetailsManagementApp.Services.ServiceInterfaces;
 using Microsoft.IdentityModel.Tokens;
 
 namespace CustomerDetailsManagementApp.Services
 {
-    public class LoginService
+    public class LoginService : ILoginService
     {
         private readonly IConfiguration _configuration;
 

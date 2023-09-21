@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CustomerDetailsManagementApp.Services.ServiceInterfaces;
+using System;
 
 namespace CustomerDetailsManagementApp.Services
 {
-    public class GetDistanceService
+    public class GetDistanceService : IGetDistanceService
     {
         public double CalculateDistance(double lat1, double lon1, double lat2, double lon2)
         {
